@@ -548,7 +548,7 @@ async function aiCall(prompt) {
   try {
     const res = await fetch('/.netlify/functions/proxy', {
       method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ model:'claude-sonnet-4-5', max_tokens:8000, messages:[{role:'user',content:prompt}] })
+      body: JSON.stringify({ model:'claude-sonnet-4-6', max_tokens:8000, messages:[{role:'user',content:prompt}] })
     });
     clearInterval(tmr); S.progStep=6; R();
     if (!res.ok) throw new Error(`API error ${res.status}`);
